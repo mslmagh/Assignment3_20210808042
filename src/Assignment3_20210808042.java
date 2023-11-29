@@ -6,6 +6,7 @@ public class Assignment3_20210808042 {
         String[] list = {"0 - Enter All Grades", "1 - Display grade information",
                 "2 - Change a single grade", "Q - to Quit"};
         menu(inp,list);
+        System.out.println();
     }
 
     public static int menu(Scanner inp, String[] list) {
