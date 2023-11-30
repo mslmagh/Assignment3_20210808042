@@ -7,6 +7,7 @@ public class Assignment3_20210808042 {
         String[] list = {"0 - Enter All Grades", "1 - Display grade information",
                 "2 - Change a single grade", "Q - to Quit"};
         menu(inp,list);
+<<<<<<< HEAD
         System.out.println();
 =======
         System.out.println("Welcome to our university grade system.");
@@ -18,6 +19,8 @@ public class Assignment3_20210808042 {
         System.out.println("a");
         
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of f4429a2 (Try)
     }
 
     public static int menu(Scanner inp, String[] list) {
