@@ -6,6 +6,7 @@ import java.util.Scanner;
  */
 public class Assignment3_20210808042 {
     public static void main(String[] args) {
+        System.out.println("Welcome to our university grade system.");
         String[] categories = {"QUiZ", "HomEwOrk", "Midterm exam", "Final exam"};
         formatCategoryName(categories);
         int[] quantities = {4, 2, 2, 1}; // initialized with 0, update based on user input
@@ -14,7 +15,6 @@ public class Assignment3_20210808042 {
     }
 
     public static int menu(Scanner inp, String[] list) {
-        System.out.println("Welcome to our university grade system.");
         System.out.println("Please enter a choice below: ");
         for (int i = 0; i < list.length; i++) {
             System.out.println(list[i]);
@@ -36,14 +36,15 @@ public class Assignment3_20210808042 {
                 }
 
             }
-        }else if( choice=='1'){
+        } else if (choice == '1') {
 
-        }else if(choice =='2'){
+        } else if (choice == '2') {
 
-        } else if (choice== 'Q') {
+        } else if (choice == 'Q') {
             System.out.println("Thank you using our system. Have a nice day");
-        }else{
+        } else {
             System.out.println("Invalid choice");
+            calculateGrade(categories, quantities, weights);
         }
     }
 
@@ -53,10 +54,7 @@ public class Assignment3_20210808042 {
 
     public static void formatCategoryName(String[] name) {
         for (int i = 0; i < name.length; i++) {
-
             name[i] = formatCategoryName(name[i]);
-            System.out.println("ergege");
-
         }
     }
 
