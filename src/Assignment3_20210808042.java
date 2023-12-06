@@ -33,6 +33,10 @@ public class Assignment3_20210808042 {
         Scanner scan = new Scanner(System.in);
         double sum = 0;
         double[] average = new double[4];
+        double[] category0 = new double[4];
+        double[] category1 = new double[4];
+        double[] category2 = new double[4];
+        double[] category3 = new double[4];
         int choice;
         do {
             choice = menu(scan, categories);
@@ -48,35 +52,81 @@ public class Assignment3_20210808042 {
                     int weightItem = scan.nextInt();
                     weights[i] = weightItem;
                 }
-                for (int i = 0; i < categories.length; i++) {
-                    for (int j = 0; j < quantities[i]; j++) {
-                        System.out.print("Please enter grade for " + categories[i] + " " + j + " >> ");
-                        int a = scan.nextInt();
-                        sum += a;
-                    }
-                    average[i]=  sum / quantities[i];
-                    sum=0;
+                category0 = new double[quantities[0]];
+                category1 = new double[quantities[1]];
+                category2 = new double[quantities[2]];
+                category3 = new double[quantities[3]];
+                for (int i = 0; i < quantities[0]; i++) {
+                    System.out.print("Please enter grade for " + categories[0] + " " + (i + 1) + " >> ");
+                    int a = scan.nextInt();
+                    category0[i] = a;
                 }
+                for (int i = 0; i < quantities[1]; i++) {
+                    System.out.print("Please enter grade for " + categories[1] + " " + (i + 1) + " >> ");
+                    int a = scan.nextInt();
+                    category1[i] = a;
+                }
+                for (int i = 0; i < quantities[2]; i++) {
+                    System.out.print("Please enter grade for " + categories[2] + " " + (i + 1) + " >> ");
+                    int a = scan.nextInt();
+                    category2[i] = a;
+                }
+                for (int i = 0; i < quantities[3]; i++) {
+                    System.out.print("Please enter grade for " + categories[3] + " " + (i + 1) + " >> ");
+                    int a = scan.nextInt();
+                    category3[i] = a;
+                }
+
             } else if (choice == 49) {
                 System.out.println("Category information: ");
+                for (int j = 0; j < quantities[0]; j++) {
+                    average[0] += category0[j] / quantities[0];
+                }
+                for (int j = 0; j < quantities[1]; j++) {
+                    average[1] += category1[j] / quantities[1];
+                }
+                for (int j = 0; j < quantities[2]; j++) {
+                    average[2] += category2[j] / quantities[2];
+                }
+                for (int j = 0; j < quantities[3]; j++) {
+                    average[3] += category3[j] / quantities[3];
+                }
                 for (int i = 0; i < categories.length; i++) {
                     System.out.println(categories[i] + " - " + average[i]);
+                }
+                for (int i = 0; i <average.length ; i++) {
+                    average[i]=0;
                 }
 
             } else if (choice == 50) {
                 System.out.println("Please enter the category");
-                for (int i = 0; i < categories.length ; i++) {
-                    System.out.println(i+" - "+ categories[i]);
+                for (int i = 0; i < categories.length; i++) {
+                    System.out.println(i + " - " + categories[i]);
                 }
                 System.out.println("Q - to Quit");
                 char choose = scan.next().charAt(0);
-                if(choose==48){
-                    System.out.println("Please enter which "+categories[0]+" would like to change (1-"+quantities[0]+")");
-                } else if (choose==49) {
-
-                }else if (choose==50) {
-
-                }else if (choose==81) {
+                if (choose == 48) {
+                    System.out.print("Please enter which " + categories[1] + " would like to change (1-" + quantities[1] + ")");
+                    int a = scan.nextInt();
+                    System.out.println("The current grade for " + categories[1] + " is " + category1[(a - 1)]);
+                    System.out.print("Please enter the new grade value >> ");
+                    double b = scan.nextDouble();
+                    category1[(a - 1)] = b;
+                } else if (choose == 49) {
+                    System.out.print("Please enter which " + categories[2] + " would like to change (1-" + quantities[2] + ")");
+                    int a = scan.nextInt();
+                    System.out.println("The current grade for " + categories[2] + " is " + category2[(a - 1)]);
+                    System.out.print("Please enter the new grade value >> ");
+                    double b = scan.nextDouble();
+                    category2[(a - 1)] = b;
+                } else if (choose == 50) {
+                    System.out.print("Please enter which " + categories[3] + " would like to change (1-" + quantities[3] + ")");
+                    int a = scan.nextInt();
+                    System.out.println("The current grade for " + categories[3] + " is " + category3[(a - 1)]);
+                    System.out.print("Please enter the new grade value >> ");
+                    double b = scan.nextDouble();
+                    category3[(a - 1)] = b;
+                } else if (choose == 81 ||choose == 113){
 
                 }
 
